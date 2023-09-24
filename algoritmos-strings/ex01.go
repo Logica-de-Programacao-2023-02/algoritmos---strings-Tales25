@@ -1,5 +1,5 @@
-//Peça ao usuário para digitar uma string e retorne a mesma string com as letras em
-//maiúsculo.
+//Escreva um programa que receba uma string e converta todas as letras minúsculas para maiúsculas.
+//Informe ao usuário o resultado.
 
 package main
 
@@ -8,6 +8,8 @@ import (
 	"fmt"
 	"os"
 )
+
+//JEITO NA LÓGICA DA TABELA ASC (TALVEZ DESSE ERRO COM CARACTERES ESPECIAIS, FUNCIONA EM FRASES SIMPLES)
 
 func main() {
 
@@ -54,5 +56,22 @@ func main() {
 		}
 
 	}
+
+}
+
+##################################################################################################################################
+//MELHOR MANEIRA
+
+func main() {
+
+	var str string
+
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Print("Digite uma frase: ")
+	scanner.Scan()
+	str = scanner.Text()
+
+	fmt.Print("A frase, em caixa alta, ficou: ", strings.ToUpper(str))
 
 }
