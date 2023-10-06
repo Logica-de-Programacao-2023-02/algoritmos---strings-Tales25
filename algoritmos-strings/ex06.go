@@ -31,3 +31,21 @@ func main() {
 	fmt.Printf("A frase contém %d palavras", wordsCounter)
 
 }
+
+//MELHOR FORMA
+
+func main() {
+
+	var str string
+
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Print("Digite uma frase: ")
+	scanner.Scan()
+	str = scanner.Text()
+
+	wordsCounter := strings.Fields(str)
+
+	fmt.Printf("A frase contém %d palavras", len(wordsCounter))
+
+}
